@@ -1,0 +1,44 @@
+{% extends 'producto/base.html' %}
+{% load static %}
+
+{% block extra_head %}
+<title>Productos</title>
+<link rel="stylesheet" href="{% static 'producto/css/publicaciones.css' %}">
+{% endblock extra_head %}
+
+{% block content %}
+<h1>Listado de Productos</h1>
+
+<div class="actions">
+    <a href="{% url 'nuevo_producto' %}" class="btn-nuevo-producto">Crear Nuevo Producto</a>
+</div>
+
+{% for producto in productos %}
+<div class="producto-container">
+    <h2 class="producto-title">
+        <a href="{% url 'detalle_producto' producto.id %}" class="producto-title-ref">{{ producto.nombre }}</a>
+    </h2>
+    <p class="producto-meta">
+        Autor: {{ producto.autor.username }} |
+        Fecha: {{ producto.created_at|date:"d M Y H:i" }} |
+        Categoría: {{ producto.categoria.nombre|default:"Sin categoría" }}
+    </p>
+    <div class="producto-imagen">
+        {% if producto.imagen %}
+        <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
+        {% else %}
+        <p>No hay imagen disponible.</p>
+        {% endif %}
+    </div>
+    <p class="producto-descripcion">
+        {{ producto.descripcion|truncatewords:50 }}
+    </p>
+    <div class="producto-actions">
+        <a href="{% url 'editar_producto' producto.id %}" class="btn-editar-producto">Editar</a>
+        <a href="{% url 'borrar_producto' producto.id %}" class="btn-eliminar-producto">Eliminar</a>
+    </div>
+</div>
+{% empty %}
+<p>No hay productos disponibles.</p>
+{% endfor %}
+{% endblock content %}

@@ -1,0 +1,186 @@
+/* detalle_producto.css */
+
+/* Restablecer márgenes y rellenos por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Contenedor principal de producto */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título de la página */
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Contenedor de detalles del producto */
+.producto-detalle {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Imagen del producto */
+.producto-detalle img {
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Información del producto */
+.producto-info {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Nombre y descripción del producto */
+.producto-info h2 {
+    font-size: 2em;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.producto-info p.descripcion {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Precio y cantidad */
+.producto-info .precio {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #28a745;
+    margin-top: 20px;
+}
+
+.producto-info .cantidad {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Botón de agregar al carrito */
+.producto-info button {
+    padding: 12px 20px;
+    font-size: 1.2em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.producto-info button:hover {
+    background-color: #0056b3;
+}
+
+/* Comentarios del producto */
+.comentarios {
+    margin-top: 40px;
+}
+
+.comentarios h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.comentarios-lista {
+    margin-top: 20px;
+}
+
+.comentario {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.comentario h4 {
+    font-size: 1.3em;
+    color: #007bff;
+}
+
+.comentario p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Formulario de agregar comentario */
+.comentarios-form {
+    margin-top: 30px;
+}
+
+.comentarios-form textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    resize: vertical;
+}
+
+.comentarios-form button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.comentarios-form button:hover {
+    background-color: #218838;
+}
+
+/* Estilos para pie de página */
+footer {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 1em;
+    color: #777;
+}
+
+/* Estilos para enlaces */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
