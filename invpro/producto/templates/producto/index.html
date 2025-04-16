@@ -1,0 +1,29 @@
+{% extends 'producto/base.html' %}
+{% load static %}
+
+{% block extra_head %}
+<title>Inicio</title>
+<link rel="stylesheet" href="{% static 'producto/css/index.css' %}">
+{% endblock extra_head %}
+
+{% block content %}
+<h1>Últimos Productos</h1>
+
+<div class="grid-productos">
+    {% for producto in productos_recientes %}
+    <div class="tarjeta-producto">
+        <h2 class="producto-title">
+            <a href="{% url 'detalle_producto' producto.id %}">{{ producto.nombre }}</a>
+        </h2>
+        <p class="producto-meta">
+            Autor: {{ producto.autor.username }} | Fecha: {{ producto.created_at|date:"d M Y H:i" }}
+        </p>
+        <p class="producto-descripcion">
+            {{ producto.descripcion|truncatewords:30 }}
+        </p>
+    </div>
+    {% empty %}
+    <p>No hay productos recientes.</p>
+    {% endfor %}
+</div>
+{% endblock content %}
